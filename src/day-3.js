@@ -1,16 +1,10 @@
-function printTriangle(size, character) {
-    //let triangle = '';
-   // let line = '';
-    
-    for (let i = 1; i <= size; i++){   
-        let line = '';
-        line += character;
-        console.log(line)
-      
+function isLeapYear(year) {
+    // Tu código aquí 👈 Verifica si el año ingresado es un año bisiesto
+    if (year>=1 && year % 4 === 0 && year % 100 === 0 && year % 400 === 0) {
+      return true;
+    } else {
+      return false;
     }
-      
-    return 
-   
   }
-  
-printTriangle(3, '%')
+
+console.log(isLeapYear('1991'))
