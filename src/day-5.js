@@ -39,6 +39,11 @@
     }
 }
 console.log(solution(["Juan", "Juanita", "Daniela"], 3, "Julian"))
+ //ejemplo de un caso donde solo quiero una iteración con un for
+ 
+   /* for(let i = 0; i <= 1-1 ; i++){
+    console.log('Soy la primera y única iteracion')
+   } */
 
 function findFamousCats(cats) {
     
