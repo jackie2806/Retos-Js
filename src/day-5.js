@@ -16,7 +16,7 @@
   }
 // ejercicio eliminar y colocar elementos de un array
 
-function solution(estudiantes, deathCount, nuevo) {
+
   function solution(estudiantes, deathCount, nuevo) {
     if (deathCount === 0) {
       const newArrEstudents = [];
