@@ -5,7 +5,7 @@
   // Ejemplo de un loop con While
   const estudiantes = ['Jackeline', 'Isabel', 'Esmeralda', 'Julieta']
   function saludarEstudiante(estudiante){
-    console.log(`Hola, ${estudiante}`)
+    //console.log(`Hola, ${estudiante}`)
   }
 
   while(estudiantes.length > 0){
@@ -38,19 +38,53 @@
       return newArrEstudents;
     }
 }
-console.log(solution(["Juan", "Juanita", "Daniela"], 3, "Julian"))
+//console.log(solution(["Juan", "Juanita", "Daniela"], 3, "Julian"))
  //ejemplo de un caso donde solo quiero una iteración con un for
  
    /* for(let i = 0; i <= 1-1 ; i++){
     console.log('Soy la primera y única iteracion')
    } */
 
+// reto hacer una función contructora con un loop 
+
+function auto (marca, modelo, annio){
+  this.marca = marca;
+  this.modelo = modelo;
+  this.annio = annio;
+}
+
+const newAuto = new auto ('Ford', 'X', 2023);
+
+//Voy a dibujar 10 autos
+function newCar(marca, modelo, annio){
+   return new auto (marca, modelo, annio); 
+}
+// Si la constante arrOfObjCards la coloco aquí se guardan todos los arrays generados por la función newCards, siendo la última posición del array la que contienen todos los objetos
+function newCars(marca, modelo, annio){
+  const arrOfObjCars = []; // Aquí solo se guarda el último array
+  
+    arrOfObjCars.push(newCar(marca, modelo, annio))
+  
+   return arrOfObjCars[0]; //cuando arrOfObjCards está dentro de la función, la posicón 0 del array siempre contendrá todos los objetos
+
+
+}
+
+console.log(newCars('Ford', 'Time', 2022))
+console.log(newCars('Tesla', 'V8', 2023))
+console.log(newCars('Nissan','V5', 2022))
+
+
+
+
+
+
 function findFamousCats(cats) {
     
     let maxFollowers = 0;
 
    for (let name in cats){
-      console.log(name)
+      //console.log(name)
     } 
 
 //return famousCats;
