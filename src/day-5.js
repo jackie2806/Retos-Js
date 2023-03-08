@@ -17,26 +17,28 @@
 // ejercicio eliminar y colocar elementos de un array
 
 function solution(estudiantes, deathCount, nuevo) {
-  if (deathCount === 0) {
-    const newArrEstudents = [];
-    for (let i = 0; i <= estudiantes.length - 1; i++){
-        newArrEstudents.push(estudiantes[i])
+  function solution(estudiantes, deathCount, nuevo) {
+    if (deathCount === 0) {
+      const newArrEstudents = [];
+      for (let i = 0; i <= estudiantes.length - 1; i++){
+          newArrEstudents.push(estudiantes[i])
+      }
+      newArrEstudents.push(nuevo);
+      return newArrEstudents;
+    } 
+  
+    if (deathCount > 0) {
+      const newArrEstudents = estudiantes
+      for (let j = 0; j <= deathCount-1; j++){ 
+        
+        newArrEstudents.pop()
+      }
+  
+      newArrEstudents.push(nuevo);
+      return newArrEstudents;
     }
-    newArrEstudents.push(nuevo);
-    return newArrEstudents;
-  } 
-
-  if (deathCount > 0) {
-    const arrDeathEstudents = estudiantes;
-    for (let j = 1; j <= deathCount; j++){      // tener cuidado con el inicio de la ejecución de la variable dentro del for (precisar cuántas iteraciones queremos que haga)
-      estudiantes.shift()
-    }
-
-    estudiantes.push(nuevo);
-    return arrDeathEstudents;
-  }
 }
-console.log(solution(["Juan", "Juanita", "Daniela"], 1, "Julian"))
+console.log(solution(["Juan", "Juanita", "Daniela"], 3, "Julian"))
 
 function findFamousCats(cats) {
     
