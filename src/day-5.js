@@ -14,6 +14,29 @@
     //console.log(estudiante)
     saludarEstudiante(estudiante); // Ese elemento eliminado del array que ha sido almacenado en la variable anterior ingresa como parámetro y se muestra
   }
+// ejercicio eliminar y colocar elementos de un array
+
+function solution(estudiantes, deathCount, nuevo) {
+  if (deathCount === 0) {
+    const newArrEstudents = [];
+    for (let i = 0; i <= estudiantes.length - 1; i++){
+        newArrEstudents.push(estudiantes[i])
+    }
+    newArrEstudents.push(nuevo);
+    return newArrEstudents;
+  } 
+
+  if (deathCount > 0) {
+    const arrDeathEstudents = estudiantes;
+    for (let j = 1; j <= deathCount; j++){      // tener cuidado con el inicio de la ejecución de la variable dentro del for (precisar cuántas iteraciones queremos que haga)
+      estudiantes.shift()
+    }
+
+    estudiantes.push(nuevo);
+    return arrDeathEstudents;
+  }
+}
+console.log(solution(["Juan", "Juanita", "Daniela"], 1, "Julian"))
 
 function findFamousCats(cats) {
     
