@@ -19,60 +19,126 @@
 
   function solution(estudiantes, deathCount, nuevo) {
     if (deathCount === 0) {
-      const newArrEstudents = [];
+      const newArrStudents = [];
       for (let i = 0; i <= estudiantes.length - 1; i++){
-          newArrEstudents.push(estudiantes[i])
+          newArrStudents.push(estudiantes[i])
       }
-      newArrEstudents.push(nuevo);
-      return newArrEstudents;
+      newArrStudents.push(nuevo);
+      return newArrStudents;
     } 
   
     if (deathCount > 0) {
-      const newArrEstudents = estudiantes
-      for (let j = 0; j <= deathCount-1; j++){ 
+      const newArrStudents = estudiantes
+      for (let j = 0; j <= deathCount-1; j++){
         
-        newArrEstudents.pop()
+        newArrStudents.pop()
       }
   
-      newArrEstudents.push(nuevo);
-      return newArrEstudents;
+      newArrStudents.push(nuevo);
+      return newArrStudents;
     }
 }
+
+// Otra mejor solución
+function solution(estudiantes, deathCount, nuevo) {
+  if (deathCount === 0) {
+    const newStudents = estudiantes;
+    newStudents.push(nuevo);
+    return newStudents;
+  }
+
+  if (deathCount > 0) {
+    const newStudents = estudiantes;
+    for (let i = 1; i <= deathCount; i++){
+      newStudents.pop();
+    }
+    newStudents.push(nuevo);
+    return newStudents;
+  }
+}
+//reto objecto
+function solution(car) {
+  if (car.licensePlate != undefined) {
+     car.drivingLicense = true;
+  } else {
+    car.drivingLicense = false;
+  }
+
+  return car
+}
+
 //console.log(solution(["Juan", "Juanita", "Daniela"], 3, "Julian"))
  //ejemplo de un caso donde solo quiero una iteración con un for
  
-   /* for(let i = 0; i <= 1-1 ; i++){
-    console.log('Soy la primera y única iteracion')
-   } */
+  
+
+// Reto coregir el bug
+function solution(cars) {
+  // 👇 Este es el código que no funciona
+  return cars.find(function (car) { //el método find solo retorna el primer elemento que cunmple con la condición
+    if (car.licensePlate) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+function solution(cars) {
+  // 👇 Este es el código que funciona
+ return cars.filter(function (car) {
+    if (car.licensePlate != undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+}
+
+
 
 // reto hacer una función contructora con un loop 
+const arrCars = []; //almacén de datos
 
 function auto (marca, modelo, annio){
   this.marca = marca;
   this.modelo = modelo;
   this.annio = annio;
 }
-
-const newAuto = new auto ('Ford', 'X', 2023);
-
+//const newAuto = new auto ('Ford', 'X', 2023);
 //Voy a dibujar 10 autos
 function newCar(marca, modelo, annio){
-   return new auto (marca, modelo, annio); 
-}
-// Si la constante arrOfObjCards la coloco aquí se guardan todos los arrays generados por la función newCards, siendo la última posición del array la que contienen todos los objetos
-function newCars(marca, modelo, annio){
-  const arrOfObjCars = []; // Aquí solo se guarda el último array
-  
-    arrOfObjCars.push(newCar(marca, modelo, annio))
-  
-   return arrOfObjCars[0]; //cuando arrOfObjCards está dentro de la función, la posicón 0 del array siempre contendrá todos los objetos
-
-
+   //return new auto (marca, modelo, annio);
+   const newCarro = {marca : marca, modelo : modelo, annio: annio}; //esta variable me permite guardar los carros ingresados para luego hacer push y después return. Caso contrario no se podría
+   arrCars.push(newCarro); //hago push al array global
+   return newCarro; // retorno el objeto
 }
 
-console.log(newCars('Ford', 'Time', 2022))
-console.log(newCars('Tesla', 'V8', 2023))
-console.log(newCars('Nissan','V5', 2022))
+function crearDiezCarros(){
+  const carros = [];
+  for(let i = 1; i<=10;i++){
+    const carrito =  newCar(i, 'Time', 2022)
+    carros.push(carrito);
+  }
+  //console.log(arrCars)
+  return carros;
+}
+const carro1 = newCar('Ford', 'Time', 2022)
+const carro2 = newCar('Tesla', 'V8', 2023)
+const carro3 = newCar('Nissan','V5', 2022)
+
+/* console.log(arrCars);
+console.log(carro2.modelo) 
+ */
+const carros10 = crearDiezCarros()
+console.log(carros10)
+console.log(arrCars)
+
+
+
+
+
+
 
 
 
