@@ -99,12 +99,11 @@ function solution(cars) {
 
 // reto hacer una función contructora con un loop 
 const arrCars = []; //almacén de datos
-
-function auto (marca, modelo, annio){
+/* function auto (marca, modelo, annio){
   this.marca = marca;
   this.modelo = modelo;
   this.annio = annio;
-}
+} */
 //const newAuto = new auto ('Ford', 'X', 2023);
 //Voy a dibujar 10 autos
 function newCar(marca, modelo, annio){
@@ -117,26 +116,22 @@ function newCar(marca, modelo, annio){
 function crearDiezCarros(){
   const carros = [];
   for(let i = 1; i<=10;i++){
-    const carrito =  newCar(i, 'Time', 2022)
+    const carrito =  newCar(i, 'Time', 2022)// push a la variable global del array vacío
     carros.push(carrito);
   }
-  //console.log(arrCars)
+ 
   return carros;
 }
-const carro1 = newCar('Ford', 'Time', 2022)
-const carro2 = newCar('Tesla', 'V8', 2023)
-const carro3 = newCar('Nissan','V5', 2022)
+const carro1 = newCar('Ford', 'Time', 2022) //llamo a la función newCar
+const carro2 = newCar('Tesla', 'V8', 2023) //llamo a la función newCar
+const carro3 = newCar('Nissan','V5', 2022) //llamo a la función newCar
 
 /* console.log(arrCars);
 console.log(carro2.modelo) 
  */
-const carros10 = crearDiezCarros()
-console.log(carros10)
-console.log(arrCars)
-
-
-
-
+const carros10 = crearDiezCarros() //llamo a la función crearDiezCarros
+//console.log(carros10) //esta variable solo me devuelve los 10 carros
+console.log(arrCars) // puedo ver todo el contenido del array que ha sido introducido en cada invocación de las funciones que contienen el método push
 
 
 
