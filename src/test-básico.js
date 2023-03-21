@@ -112,17 +112,31 @@ Por supuesto.
 for (let i = 0; i < 5; i++) {
     console.log("El valor de i es: " + i);
 }
-While(){
-
+let i = 0;
+while(i<5){
+    console.log("El valor de i es: " + i);
+    i++;
 }
 for (let i = 10; i >= 2; i--) {
     console.log("El valor de i es: " + i);
 }
-while(){
-
+let i = 10
+while(i > = 2){
+    console.log("El valor de i es: " + i);
+    i--;
 }
 3️⃣ Escribe un código en JavaScript que le pregunte a los usuarios cuánto es 2 + 2. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
 💡 Pista: puedes usar la función prompt de JavaScript.
+
+function mathPower(){
+    let answer = prompt('Cuánto es 2 +2');
+    if (answer == 4){
+        return alert('Felicitaciones')
+    } else {
+        return mathPower()
+    }
+}
+mathPower()
 
 Listas
 1️⃣ Responde las siguientes preguntas en la sección de comentarios:
@@ -136,6 +150,45 @@ Los arrays sirven para hacer ejercicios prácricos, no tanto para almacenar vol�
 ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
 Claro 
 2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+function myArr (arr){
+    return arr[0];
+}
+myArr(['a','e'])
 3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
+
 4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo). */
 
+function myArr (arr){
+    return arr[0];
+}
+myArr(['a','e'])
+
+function printAllElements(arr){
+   let newElement = '';
+    for(let i = 0; i <= arr.length-1; i++){
+        let element = '';
+            element = arr[i];
+            newElement += `${element} \n`;        
+        
+    }
+ 
+    return newElement ; 
+   
+}
+console.log(printAllElements([ 'a', 'e', 'i', 'o', 'u']))
+
+function myObj (obj){
+    let printObj = '';
+    for(let element in obj){
+        let printKey = '';
+        let printValue = '';
+        printKey = element;
+        printValue = obj[element];
+
+        printObj += `${printKey}:${printValue}\n`;
+        //console.log(element+ ':'+ obj[element])
+    }
+    
+    return printObj;
+}
+console.log(myObj({name:'Toyota', annio:2021, kilometraje: 0}))
