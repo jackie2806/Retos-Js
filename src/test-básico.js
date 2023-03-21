@@ -146,14 +146,11 @@ Es una colección de datos que no guardan relación entre sí necesariamente.
 Es la representación de propiedades y acciones que guardan relación entre sí. 
 ¿Cuándo es mejor usar objetos o arrays?
 Los objetos es mejor usarlos cuando tenemos que manejar mucha cantidad de datos.
-Los arrays sirven para hacer ejercicios prácricos, no tanto para almacenar volúmenes de información.
+Los arrays sirven para hacer ejercicios prácticos, no tanto para almacenar volúmenes de información.
 ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
 Claro 
 2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
-function myArr (arr){
-    return arr[0];
-}
-myArr(['a','e'])
+
 3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
 
 4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo). */
