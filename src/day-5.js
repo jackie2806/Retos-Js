@@ -135,46 +135,6 @@ console.log(arrCars) // puedo ver todo el contenido del array que ha sido introd
 
 
 
+// Encontrar al gato más famoso
 
 
-
-
-
-function findFamousCats(cats) {
-    
-    let maxFollowers = 0;
-
-   for (let name in cats){
-      //console.log(name)
-    } 
-
-//return famousCats;
-    
-  }
-
-  findFamousCats([
-    /*  {
-       name: "Luna",
-       followers: [500, 200, 300]
-     },
-     {
-       name: "Michi",
-       followers: [100, 300]
-     }, */
-     {
-         name: "Mimi",
-         followers: [320, 120, 70]
-       },
-       {
-         name: "Milo",
-         followers: [400, 300, 100, 200]
-       },
-       {
-         name: "Gizmo",
-         followers: [250, 750]
-       },
-       {
-         name: "Truco",
-         followers: [250]
-       }
-   ])

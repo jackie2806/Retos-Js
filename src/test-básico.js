@@ -143,7 +143,7 @@ Listas
 ¿Qué es un array?
 Es una colección de datos que no guardan relación entre sí necesariamente.
 ¿Qué es un objeto?
-Es la representación de propiedades y acciones que guardan relación entre sí. 
+Es la representación de propiedades y acciones que guardan relación entre sí. Es un tipo de dato que permite almacenar una colección de pares clave-valor.
 ¿Cuándo es mejor usar objetos o arrays?
 Los objetos es mejor usarlos cuando tenemos que manejar mucha cantidad de datos.
 Los arrays sirven para hacer ejercicios prácticos, no tanto para almacenar volúmenes de información.
