@@ -1,4 +1,4 @@
-/* debes retornar un nuevo objeto que tenga la propiedad classAverage con el promedio de la clase
+/* Debes retornar un nuevo objeto que tenga la propiedad classAverage con el promedio de la clase
  y un array de students con los estudiantes y sus promedios individuales */
 
 function getStudentAverage(students) {
