@@ -5,46 +5,43 @@ Si hay más de un palíndromo con la misma longitud máxima, debes devolver el p
 Un palíndromo es una palabra que se puede leer de la misma manera tanto hacia adelante como hacia atrás. */
 
 function findLargestPalindrome(words) {
+  let largestPalindrome = "";
 
-    let largestPalindrome = '';
+  for (let i = 0; i <= words.length - 1; i++) {
+    let word = words[i];
+    let arrWord = [...word];
+    console.log(arrWord);
+    let palindrome = false;
+    let normalLetters = "";
+    let reverseLetters = "";
 
-    for (let i = 0; i <= words.length-1; i++){
-        let word = words[i];
-        let arrWord = [...word]; 
-        console.log(arrWord)
-        let palindrome = false;
-        let normalLetters = '';
-        let reverseLetters = '';
-
-       for (let j = 0; j <= arrWord.length-1; j++){
-            console.log(arrWord[j]);
-            let normalLetterOfWord = arrWord[j];
-            normalLetters = normalLetterOfWord;     
-       }
-       console.log(arrWord)
-       for (let k = [arrWord.length-1]; k >= 0; k--){
-            console.log(arrWord[k]);
-            let letterOfWordReverse = arrWord[k];
-            reverseLetters = letterOfWordReverse;
-       }
-
-       if(normalLetters === reverseLetters){
-        palindrome = true;
-        let palindromeWord = '';    
-        palindromeWord = word;
-        if(palindrome &&  palindromeWord.length > largestPalindrome.length){
-            largestPalindrome = palindromeWord;
-        }              
-       }    
-    
+    for (let j = 0; j <= arrWord.length - 1; j++) {
+      console.log(arrWord[j]);
+      let normalLetterOfWord = arrWord[j];
+      normalLetters = normalLetterOfWord;
+    }
+    console.log(arrWord);
+    for (let k = [arrWord.length - 1]; k >= 0; k--) {
+      console.log(arrWord[k]);
+      let letterOfWordReverse = arrWord[k];
+      reverseLetters = letterOfWordReverse;
     }
 
-    if (largestPalindrome.length === 0){
-        largestPalindrome = null;
+    if (normalLetters === reverseLetters) {
+      palindrome = true;
+      let palindromeWord = "";
+      palindromeWord = word;
+      if (palindrome && palindromeWord.length > largestPalindrome.length) {
+        largestPalindrome = palindromeWord;
+      }
     }
-    // console.log('fin',largestPalindrome)
-    return largestPalindrome;
-   
+  }
+
+  if (largestPalindrome.length === 0) {
+    largestPalindrome = null;
+  }
+  // console.log('fin',largestPalindrome)
+  return largestPalindrome;
 }
 
-console.log(findLargestPalindrome(["racecar", "level", "world", "hello"]))
+console.log(findLargestPalindrome(["racecar", "level", "world", "hello"]));
