@@ -1,47 +1,111 @@
-/*En este desafío, debes crear una función que encuentre el palíndromo más largo en una lista de palabras. 
-Recibirás un único parámetro: un array de palabras. 
-Si no hay ningún palíndromo en la lista, la función debe devolver null.
-Si hay más de un palíndromo con la misma longitud máxima, debes devolver el primer palíndromo encontrado en la lista.
-Un palíndromo es una palabra que se puede leer de la misma manera tanto hacia adelante como hacia atrás. */
+  /* Closures y higher order functions*/
+/* Ejercicio resuelto (playground) */
 
-function findLargestPalindrome(words) {
-  let largestPalindrome = "";
+/* La calculadora debe contar con los siguientes métodos:
 
-  for (let i = 0; i <= words.length - 1; i++) {
-    let word = words[i];
-    let arrWord = [...word];
-    console.log(arrWord);
-    let palindrome = false;
-    let normalLetters = "";
-    let reverseLetters = "";
+add: recibe un número, lo suma al total y devuelve el resultado
+subtract: recibe un número, lo resta al total y devuelve el resultado
+multiply: recibe un número, lo multiplica al total y devuelve el resultado
+divide: recibe un número, lo divide al total y devuelve el resultado
+clear: reinicia el total a 0 y devuelve el resultado
+getTotal: devuelve el total actual.
+Ejemplo 1:
 
-    for (let j = 0; j <= arrWord.length - 1; j++) {
-      console.log(arrWord[j]);
-      let normalLetterOfWord = arrWord[j];
-      normalLetters = normalLetterOfWord;
-    }
-    console.log(arrWord);
-    for (let k = [arrWord.length - 1]; k >= 0; k--) {
-      console.log(arrWord[k]);
-      let letterOfWordReverse = arrWord[k];
-      reverseLetters = letterOfWordReverse;
-    }
+Input:
+const calculator = createCalculator()
+calculator.add(10)
 
-    if (normalLetters === reverseLetters) {
-      palindrome = true;
-      let palindromeWord = "";
-      palindromeWord = word;
-      if (palindrome && palindromeWord.length > largestPalindrome.length) {
-        largestPalindrome = palindromeWord;
-      }
+Output: 10
+
+Ejemplo 2:
+
+const calculator = createCalculator()
+calculator.add(10)
+calculator.subtract(-10)
+
+Output: 20
+
+Ejemplo 3:
+
+const calculator = createCalculator()
+calculator.add(10)
+calculator.subtract(-10)
+calculator.clear()
+
+Output: 0 */
+
+function createCalculator() {
+  let total = 0;
+  return {
+    add: (value) => {
+      total += value;
+      return total;
+    },
+    subtract: (value) => {
+      total -= value;
+      return total;
+    },
+    multiply: (value) => {
+      total *= value;
+      return total;
+    },
+    divide: (value) => {
+      total /= value;
+      return total;
+    },
+    clear: (value) => {
+      value = 0;
+      total = value;
+      return total;
+    },
+    getTotal: (value) => {
+      value = total;
+      return value;
     }
   }
-
-  if (largestPalindrome.length === 0) {
-    largestPalindrome = null;
-  }
-  // console.log('fin',largestPalindrome)
-  return largestPalindrome;
+  
 }
 
-console.log(findLargestPalindrome(["racecar", "level", "world", "hello"]));
+const sum1 = createCalculator();
+console.log(sum1.add(5))
+console.log(sum1.add(2))
+
+
+// Crea tu propio método map
+
+/* En este desafío debes desarrollar una implementación personalizada del método map utilizando funciones de orden superior.
+
+Recibirás como parámetros un array y una función (func). El array contendrá un conjunto de elementos (números, objetos, strings, etc.) y la función se utilizará para aplicar una acción sobre cada elemento del array. Tu objetivo es devolver un nuevo array con los resultados de la función tal y como lo haría el método map.
+ */
+
+myMap(array, func) {
+  const newArr = [];
+ 
+  for (let i = 0; i <= array.length - 1; i++){
+    
+    newArr.push(func(array[i]))
+  }
+  console.log(newArr)
+  return newArr;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
