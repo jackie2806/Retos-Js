@@ -28,7 +28,6 @@ splitArrString = joinArrString.split(' ');
 console.log(splitArrString)
 const arrOfArrStr = [];
 for (let k = 0; k <= splitArrString.length - 1; k++){ 
-
     arrOfArrStr.push([splitArrString[k]]); 
 }
 
