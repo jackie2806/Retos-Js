@@ -29,9 +29,23 @@ console.log(splitArrString)
 const arrOfArrStr = [];
 for (let k = 0; k <= splitArrString.length - 1; k++){ 
     arrOfArrStr.push([splitArrString[k]]); 
+    
 }
 
 console.log(arrOfArrStr)
+  const arrOfGroupOfArrSplit = []
+for(let l = 0; l <= arrOfArrStr.length - 1; l++){
+  let simpleArr = arrOfArrStr[l];
+  let splitSimpleArr = simpleArr[0].split('');
+   arrOfGroupOfArrSplit.push(splitSimpleArr);
+
+}
+console.log(arrOfGroupOfArrSplit)
+
+
+ /*  let splitSimpleArr = simpleArr.split('');
+    console.log(splitSimpleArr) */
+  //console.log(arrOfArrStr[l])
 
 
 
