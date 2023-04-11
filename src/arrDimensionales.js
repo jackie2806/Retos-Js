@@ -5,7 +5,7 @@ const sqrtOf = Math.sqrt(lengthOfStr);
 const numberOfRows = Math.round(sqrtOf); // 3
 console.log(Math.round(sqrtOf));
 const numberOfColumns = numberOfRows + 1; // 4
-let newStrWithSpaces;
+let newArrStrWithSpaces;
 //agrupación
 //primero columnas
 let newArr = [];
@@ -21,11 +21,20 @@ for (let j = 0; j <= oldArr.length - 1; j++) {
   newArr.push(' ');
 
 }
-newStrWithSpaces = newArr.concat(oldArr);
-console.log(newStrWithSpaces);
+newArrStrWithSpaces = newArr.concat(oldArr);
+console.log(newArrStrWithSpaces);
+joinArrString = newArrStrWithSpaces.join('');
+splitArrString = joinArrString.split(' ');
+console.log(splitArrString)
+const arrOfArrStr = [];
+for (let k = 0; k <= splitArrString.length - 1; k++){ 
 
-/* console.log(oldArr);
-console.log(newArr) */
+    arrOfArrStr.push([splitArrString[k]]); 
+}
+
+console.log(arrOfArrStr)
+
+
 
 /* const firstGroup = str.split('',numberOfColumns);
 console.log(firstGroup)
