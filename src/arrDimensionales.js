@@ -1,4 +1,4 @@
-const str = "holaspepes";
+const str = "haveaniceday";
 const arrStr = str.split("");
 const lengthOfStr = str.length;
 const sqrtOf = Math.sqrt(lengthOfStr);
@@ -17,6 +17,7 @@ for (let j = 0; j <= oldArr.length - 1; j++) {
       newArr.push(elementsInGroup);   
     }
     oldArr = arrStr;
+   
   }
   newArr.push(' ');
 
@@ -40,7 +41,24 @@ for(let l = 0; l <= arrOfArrStr.length - 1; l++){
    arrOfGroupOfArrSplit.push(splitSimpleArr);
 
 }
-console.log(arrOfGroupOfArrSplit)
+//console.log(arrOfGroupOfArrSplit)
+ // quitar el array vacío
+ arrOfGroupOfArrSplit.pop(); // revisar quitar el pop
+
+ console.log(arrOfGroupOfArrSplit)
+ const matrix = arrOfGroupOfArrSplit;
+ for(let i = 0; i < matrix[0].length ; i++){
+   for(let j = 0; j < matrix.length; j++){ 
+    //console.log('i',[i],'j',[j] )
+    
+    if(j < numberOfRows ){
+      
+      console.log(matrix[j][i])
+    }
+    
+   }
+ }
+
 
 
  /*  let splitSimpleArr = simpleArr.split('');
