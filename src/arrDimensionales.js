@@ -22,9 +22,9 @@ for (let j = 0; j <= oldArrOfLetters.length - 1; j++) {
 }
 newArr.pop(" ");
 console.log("primerArr", newArr);
-/* newArrStrWithSpaces = newArr.concat(oldArrOfLetters);
-console.log(newArrStrWithSpaces); */
-const joinArrString = newArr.join("");
+const newArrStrWithSpaces = newArr.concat(oldArrOfLetters);
+console.log(newArrStrWithSpaces); 
+const joinArrString = newArrStrWithSpaces.join("");
 const splitArrString = joinArrString.split(" ");
 console.log("uniones", splitArrString);
 
@@ -53,14 +53,16 @@ for (let i = 0; i < numberOfColumns; i++) { //numberOfColumns (4)
   for (let j = 0; j < numberOfRows; j++) { //numberOfRows (3)
     //console.log('matrixCero', matrix.length)
     //console.log('i',[i],'j',[j] )
-    if (j < numberOfRows) {
+  /*   if (j < numberOfRows) {
       //console.log('i',[i],'j',[j] )
       newArrOfLetters.push(matrix[j][i]);
-    }
+    } */
+
+    newArrOfLetters.push(matrix[j][i]);
   }
 }
 
-console.log(newArrOfLetters);
+console.log('Mis letras',newArrOfLetters); //bien
 
 // separando las nuevas letras
 
@@ -77,9 +79,10 @@ for (let j = 0; j <= oldArrLetters.length - 1; j++) {
   arrLetters.push(" ");
 }
 
-arrLetters.pop(" ");
-console.log(arrLetters);
-const lettersJoin = arrLetters.join("");
+//arrLetters.pop(" ");
+console.log('letters', arrLetters); //arrLettersWithSpaces = arrLetters.concat(oldArrLetters)
+const arrConcat = arrLetters.concat(oldArrLetters);
+const lettersJoin = arrConcat.join("");
 console.log(lettersJoin);
 const lettersSplit = lettersJoin.split(" ");
 console.log(lettersSplit);
