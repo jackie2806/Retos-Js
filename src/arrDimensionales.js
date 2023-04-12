@@ -5,67 +5,103 @@ const sqrtOf = Math.sqrt(lengthOfStr);
 const numberOfRows = Math.round(sqrtOf); // 3
 console.log(Math.round(sqrtOf));
 const numberOfColumns = numberOfRows + 1; // 4
-let newArrStrWithSpaces;
+//let newArrStrWithSpaces;
 //agrupación
 //primero columnas
 let newArr = [];
-let oldArr = arrStr;
-for (let j = 0; j <= oldArr.length - 1; j++) {
-  if (oldArr.length > 0) {
+let oldArrOfLetters = arrStr;
+for (let j = 0; j <= oldArrOfLetters.length - 1; j++) {
+  if (oldArrOfLetters.length > 0) {
     for (let i = 0; i <= numberOfColumns - 1; i++) {
-      let elementsInGroup = oldArr.shift(arrStr[i]);
-      newArr.push(elementsInGroup);   
+      let elementsInGroup = oldArrOfLetters.shift(arrStr[i]);
+      newArr.push(elementsInGroup);
     }
-    oldArr = arrStr;
-   
+    oldArrOfLetters = arrStr;
+    newArr.push(" ");
   }
-  newArr.push(' ');
-
 }
-newArrStrWithSpaces = newArr.concat(oldArr);
+newArr.pop(" ");
+console.log("primerArr", newArr);
+/* newArrStrWithSpaces = newArr.concat(oldArrOfLetters);
+console.log(newArrStrWithSpaces); */
+const joinArrString = newArr.join("");
+const splitArrString = joinArrString.split(" ");
+console.log("uniones", splitArrString);
+
+const arrOfArrStr = [];
+for (let k = 0; k <= splitArrString.length - 1; k++) {
+  arrOfArrStr.push([splitArrString[k]]);
+}
+
+console.log(arrOfArrStr);
+const arrOfGroupOfArrSplit = [];
+for (let l = 0; l <= arrOfArrStr.length - 1; l++) {
+  let simpleArr = arrOfArrStr[l];
+  let splitSimpleArr = simpleArr[0].split("");
+  arrOfGroupOfArrSplit.push(splitSimpleArr);
+}
+//console.log(arrOfGroupOfArrSplit)
+// quitar el array vacío
+//arrOfGroupOfArrSplit.pop(); // revisar quitar el pop
+
+console.log(arrOfGroupOfArrSplit);
+
+const matrix = arrOfGroupOfArrSplit;
+let newArrOfLetters = [];
+for (let i = 0; i < numberOfColumns; i++) { //numberOfColumns (4)
+  
+  for (let j = 0; j < numberOfRows; j++) { //numberOfRows (3)
+    //console.log('matrixCero', matrix.length)
+    //console.log('i',[i],'j',[j] )
+    if (j < numberOfRows) {
+      //console.log('i',[i],'j',[j] )
+      newArrOfLetters.push(matrix[j][i]);
+    }
+  }
+}
+
+console.log(newArrOfLetters);
+
+// separando las nuevas letras
+
+let arrLetters = [];
+let oldArrLetters = newArrOfLetters;
+for (let j = 0; j <= oldArrLetters.length - 1; j++) {
+  if (oldArrLetters.length > 0) {
+    for (let i = 0; i <= numberOfRows - 1; i++) {
+      let elementsInGroup = oldArrLetters.shift(newArrOfLetters[i]);
+      arrLetters.push(elementsInGroup);
+    }
+    oldArrLetters = newArrOfLetters;
+  }
+  arrLetters.push(" ");
+}
+
+arrLetters.pop(" ");
+console.log(arrLetters);
+const lettersJoin = arrLetters.join("");
+console.log(lettersJoin);
+const lettersSplit = lettersJoin.split(" ");
+console.log(lettersSplit);
+
+let result = ""; //result += `${y}\n`;
+
+for (let i = 0; i <= lettersSplit.length - 1; i++) {
+  result += `${lettersSplit[i]} `;
+}
+console.log(result);
+//arrLettersWithSpaces = arrLetters.concat(oldArrLetters)
+//console.log(arrLettersWithSpaces)
+/* newArrStrWithSpaces = newArr.concat(oldArrOfLetters);
+
 console.log(newArrStrWithSpaces);
 joinArrString = newArrStrWithSpaces.join('');
 splitArrString = joinArrString.split(' ');
-console.log(splitArrString)
-const arrOfArrStr = [];
-for (let k = 0; k <= splitArrString.length - 1; k++){ 
-    arrOfArrStr.push([splitArrString[k]]); 
-    
-}
+console.log(splitArrString) */
 
-console.log(arrOfArrStr)
-  const arrOfGroupOfArrSplit = []
-for(let l = 0; l <= arrOfArrStr.length - 1; l++){
-  let simpleArr = arrOfArrStr[l];
-  let splitSimpleArr = simpleArr[0].split('');
-   arrOfGroupOfArrSplit.push(splitSimpleArr);
-
-}
-//console.log(arrOfGroupOfArrSplit)
- // quitar el array vacío
- arrOfGroupOfArrSplit.pop(); // revisar quitar el pop
-
- console.log(arrOfGroupOfArrSplit)
- const matrix = arrOfGroupOfArrSplit;
- for(let i = 0; i < matrix[0].length ; i++){
-   for(let j = 0; j < matrix.length; j++){ 
-    //console.log('i',[i],'j',[j] )
-    
-    if(j < numberOfRows ){
-      
-      console.log(matrix[j][i])
-    }
-    
-   }
- }
-
-
-
- /*  let splitSimpleArr = simpleArr.split('');
+/*  let splitSimpleArr = simpleArr.split('');
     console.log(splitSimpleArr) */
-  //console.log(arrOfArrStr[l])
-
-
+//console.log(arrOfArrStr[l])
 
 /* const firstGroup = str.split('',numberOfColumns);
 console.log(firstGroup)
