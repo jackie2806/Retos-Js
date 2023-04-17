@@ -35,6 +35,47 @@ for(let i = 0; i <= str.length - 1; i += numberOfColumns){
 
 console.log(arrTwoDimensions)
 
+const arr = [ [ 'f', 'e', 'e', 'd' ], [ 't', 'h', 'e', 'd' ], [ 'o', 'g' ] ];
+let newArr = '';
+
+for (let j = 0; j < arr[0].length; j++) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][j] !== undefined) {
+      newArr += arr[i][j];
+    }
+  }
+  newArr += ' ';
+}
+
+newArr = newArr.trim();
+console.log(newArr);
+
+
+/* const arr = [ [ 'f', 'e', 'e', 'd' ], [ 't', 'h', 'e', 'd' ], [ 'o', 'g' ] ]
+
+const newArr = [];
+
+for (let j = 0; j < arr[0].length; j++) {
+  for (let i = 0; i < arr.length; i++) {
+ 
+    newArr.push(arr[i][j]);
+  }
+}
+
+console.log(newArr) */
+
+
+/* const arr = [ [ 'f', 'e', 'e', 'd' ], [ 't', 'h', 'e', 'd' ], [ 'o', 'g' ] ];
+
+let result = "";
+
+for (let i = 0; i < arr.length; i++) {
+  //console.log(arr[i].join('')+' ')
+  result += arr[i].join("") + " ";
+}
+
+console.log(result.trim()); */  // "fto ehg ee dd"
+
 /* let s = "feedthedog";
 let result = [];
 for (let i = 0; i < s.length; i += 4) {
