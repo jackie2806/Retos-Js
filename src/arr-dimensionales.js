@@ -110,3 +110,41 @@ console.log(splitArrString) */
 console.log(firstGroup)
 
  */
+
+//recorrer un array de 2 dimensiones horizontalmente
+
+
+
+
+const arr = [  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+/* En este ejemplo, la variable arr es un array de 2 dimensiones que contiene 3 subarrays de longitud 3.
+ Se utiliza un bucle for para iterar sobre cada subarray en el array principal arr. Dentro de ese bucle, se utiliza otro bucle for para iterar sobre cada elemento en el subarray actual. 
+ Dentro de este segundo bucle, se imprime el valor actual del elemento en la consola con el método console.log().
+
+Este código recorre el array de 2 dimensiones en orden de fila por fila. Si necesitas recorrer el array en orden de columna por columna, simplemente cambia el orden de los bucles for. */
+
+const arrArr = [  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+for (let j = 0; j < arrArr[0].length; j++) {
+  for (let i = 0; i < arrArr.length; i++) {
+    console.log(arrArr[i][j]);
+  }
+}
+
+/* En este ejemplo, la variable arr es un array de 2 dimensiones que contiene 3 subarrays de longitud 3. 
+Se utiliza un bucle for para iterar sobre cada columna en el array principal arr. Dentro de ese bucle, se utiliza otro bucle for para iterar sobre cada fila en la columna actual. 
+Dentro de este segundo bucle, se imprime el valor actual del elemento en la consola con el método console.log().
+
+Este código recorre el array de 2 dimensiones en orden de columna por columna. Si necesitas recorrer el array en orden de fila por fila, simplemente cambia el orden de los bucles for. */
