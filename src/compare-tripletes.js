@@ -1,3 +1,4 @@
+
 function compareTriplets(a, b) {
     let aliceScore = 0;
 let bobScore = 0;
@@ -12,3 +13,6 @@ for (let i = 0; i < 3; i++) {
 
 return [aliceScore, bobScore];
 }
+
+console.log(compareTriplets([5, 6, 7],
+    [3, 6, 10]))
