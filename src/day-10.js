@@ -75,5 +75,44 @@ planner.filterTasksByTag("shopping")
 }] */
 
 function createTaskPlanner() {
-    // Tu código aquí 👈
+    const tasks = [];
+  
+    return {
+      addTask(task) {
+        task.completed = false; // Agregar la propiedad "completed" con valor falso
+        tasks.push(task);
+      },
+      removeTask(value) {
+        tasks.splice(
+          tasks.findIndex(task => task.id === value || task.name === value),
+          1
+        );
+      },
+      getTasks() {
+        return tasks;
+      },
+      getPendingTasks() {
+        return tasks.filter(task => !task.completed);
+      },
+      getCompletedTasks() {
+        return tasks.filter(task => task.completed);
+      },
+      markTaskAsCompleted(value) {
+        const task = tasks.find(task => task.id === value || task.name === value);
+        if (task) task.completed = true;
+      },
+      getSortedTasksByPriority() {
+        return [...tasks].sort((a, b) => a.priority - b.priority);
+      },
+      filterTasksByTag(tag) {
+        return tasks.filter(task => task.tags.includes(tag));
+      },
+      updateTask(taskId, updates) {
+        const task = tasks.find(task => task.id === taskId);
+        if (task) {
+          Object.assign(task, updates);
+        }
+      }
+    };
   }
+  
