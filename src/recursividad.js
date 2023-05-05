@@ -26,6 +26,19 @@ function fibonacci(n){
     
 }
 
-console.log(fibonacci(6))
+console.log(fibonacci(16))
 
 //solución usando el valor
+function fibonacciOther(n){
+    let prev1 = 0;
+    let prev2 = 1;
+    let next;
+
+    for (let i = 2; i <= n; i++) {
+    next = fibonacci(prev1, prev2);
+    prev1 = prev2;
+    prev2 = next;
+    }
+}
+
+console.log(fibonacciOther(16))
