@@ -44,3 +44,63 @@ function fibonacci2(n){
 }
 
 console.log(fibonacci2(16))
+// mostrar todos los números de Fibonacci
+function fibonacci3(n) {
+    if (n < 2) {
+      return n;
+    }
+    
+    return fibonacci3(n - 1) + fibonacci3(n - 2);
+
+  }
+  
+  console.log(fibonacci3(6)); // Output: 8
+
+  // otra solución mostrando los números
+
+  function fibonacciSequenceRecursive(n, prev1 = 0, prev2 = 1) {
+    let result
+    if (n === 0) {
+      return prev1;
+    } else if (n === 1) {
+      return [prev1, prev2];
+    } else {
+      const next = prev1 + prev2;
+      result = [prev1, ...fibonacciSequenceRecursive(n - 1, prev2, next)];
+      
+    }
+
+    return result;
+    
+}
+  
+  console.log(fibonacciSequenceRecursive(6));
+
+  const arrOfFibonacci = (n, prev1 = 0, prev2 = 1) =>{
+    let result
+    if (n === 0) {
+      return prev1;
+    } else if (n === 1) {
+      return [prev1, prev2];
+    } else {
+      const next = prev1 + prev2;
+      result = [prev1, ...fibonacciSequenceRecursive(n - 1, prev2, next)];
+      
+    }
+
+    return result;
+    
+}
+
+console.log(arrOfFibonacci(7))
+
+function fibonacciWithoutArr(arrOfFibonacci){
+    const arrLength = arrOfFibonacci.length-1;
+
+    for(let i = 0; i <= arrLength ; i++){
+        console.log(arrOfFibonacci[i])
+    }
+
+}
+
+fibonacciWithoutArr(arrOfFibonacci(6))
