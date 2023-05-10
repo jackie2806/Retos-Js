@@ -18,5 +18,6 @@ function solution(numbers) {
     }
     factor1 += 1;
   }
-  solution([27, 36, 45, 54, 63, 72])
+  //solution([27, 36, 45, 54, 63, 72])
   //console.log()
+  solution([27, 36, 45, 54, 42, 72])
