@@ -9,7 +9,8 @@ solution(15)
 Output
 
 5 */
-function solution(num) {
+//esta primera solución solo funciona para números pequeños
+/* function solution(num) {
   let counterSteps = 0;
   if(num === 0){
     return 0;
@@ -36,7 +37,32 @@ function solution(num) {
   }
 return counterSteps;
   
+} */
+
+//funciona para todo número, ya sea grande o pequeño
+function solution(num) {
+  let counter = 0;
+  if(num === 0){
+    return 0;
+  }
+
+  while (num !== 1) {
+    if (num % 2 === 0) {
+      num = num / 2;
+    } else {
+      if (num === 3 || (num - 1) % 4 === 0) {
+        num = num - 1;
+      } else {
+        num = num + 1;
+      }
+    }
+    counter++;
+  }
+
+  return counter;
 }
+
+
 console.log(solution(15));
 console.log(solution(328593));
 console.log(solution(1));
