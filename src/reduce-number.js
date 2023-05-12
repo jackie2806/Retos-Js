@@ -45,20 +45,21 @@ function solution(num) {
   if(num === 0){
     return 0;
   }
-
   while (num !== 1) {
     if (num % 2 === 0) {
       num = num / 2;
     } else {
-      if (num === 3 || (num - 1) % 4 === 0) {
+      if (num === 3) {
         num = num - 1;
-      } else {
+      } else if ((num + 1) % 4 === 0) {
         num = num + 1;
+      } else {
+        num = num - 1;
       }
     }
     counter++;
   }
-
+  
   return counter;
 }
 
