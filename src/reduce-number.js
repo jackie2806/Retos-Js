@@ -10,6 +10,22 @@ Output
 
 5 */
 function solution(num) {
+  let counter = 0;
+  if(num % 2 === 0){
+    while(num > 1){      
+      num = num /2;
+      counter += 1;
+    }
+  } else {
+    num = num + 1;
+    counter += 1;
+    while(num>1){
+          
+      num = num /2;
+      counter += 1;  
+    }
+  }
+ console.log(counter);
   
 }
 solution(15);
