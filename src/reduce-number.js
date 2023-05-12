@@ -10,24 +10,38 @@ Output
 
 5 */
 function solution(num) {
-  let counter = 0;
-  if(num % 2 === 0){
-    while(num > 1){      
-      num = num /2;
-      counter += 1;
-    }
-  } else {
-    num = num + 1;
-    counter += 1;
-    while(num>1){
-          
-      num = num /2;
-      counter += 1;  
+  let counterSteps = 0;
+  if(num === 0){
+    return 0;
+  }
+  if(num === 1){
+    return 1;
+  }
+  if(num > 1){
+    let newNUmber = num;
+    if(newNUmber % 2 === 0){
+      while(newNUmber > 1){
+        newNUmber = newNUmber / 2;
+        counterSteps += 1;
+      }
+    }else{
+      newNUmber = num + 1;
+      counterSteps += 1;
+      while(newNUmber > 1){
+        newNUmber = newNUmber / 2;
+        counterSteps += 1;
+      }
+
     }
   }
- console.log(counter);
+return counterSteps;
   
 }
-solution(15);
+console.log(solution(15));
+console.log(solution(328593));
+console.log(solution(1));
+console.log(solution(0));
+console.log(solution(2))
+console.log(solution(16))
 
 
