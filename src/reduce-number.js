@@ -10,17 +10,8 @@ Output
 
 5 */
 function solution(num) {
-    let counter = 0;
-    if (num === 1){
-        counter++;
-        return counter;
-    } else {
-        for(let i = num + 1; i <= 1; i--){
-            counter++;
-        }
-    }
+  
+}
+solution(15);
 
-    return counter;
-  }
 
-  console.log(solution(15));
