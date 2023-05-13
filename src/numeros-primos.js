@@ -1,16 +1,27 @@
 function solution(num) {
-    // Tu código aquí 👈
-    console.log(num)
-    const result = [];
-  
-    if (num > 1) {
-      for (let i = 2; i <= num; i++){
-        if (i % i === 0 && i % 1 === 0 && i % 2 === 1) {
-          result.push(i)
-        }
-      }
-    }
-   console.log(result)
-  }
+  // Tu código aquí 👈
+  const primos = [];
 
-  solution(5)
+  for (let i = 2; i <= num; i++) {
+    if (esPrimo(i)) {
+      primos.push(i);
+    }
+  }
+  console.log(primos)
+  return primos;
+}
+
+function esPrimo(num) {
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    //eficiencia del algoritmo
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+solution(20); 
